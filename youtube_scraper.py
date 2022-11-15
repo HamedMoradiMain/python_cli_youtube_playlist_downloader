@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup # BeautifulSoup module
 import json # json module for getting json output 
 import csv # csv module for storing data in .csv format
 import re # regx module for 
-from pytube import YouTube
+from pytube import YouTube # Youtube object from the pytube module in attempt to download videos from youtube
 
 class YouTubeCrawler:
     video_links = []
