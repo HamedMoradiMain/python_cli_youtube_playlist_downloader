@@ -9,7 +9,7 @@ class YouTubeCrawler:
     video_links = []
     channel_link = str(input("put your channel link: ")).lstrip().rstrip()
     base_url = 'https://www.youtube.com/watch?v='
-    SAVE_PATH = "F:\youtube"
+    SAVE_PATH = "F:\Music\afghani"
     '''#headers = {
         'authority': 'www.google.com'
         ,'accept-encoding': 'gzip, deflate, br'
@@ -35,14 +35,14 @@ class YouTubeCrawler:
                 print("Connection while parsing video titles")
         video_no = input("Put Your Video No here! (for downloading all of videos write 'all')")
         if (str(video_no.strip().lower())) == "all":
-                for i in range(len(link_list)):
+                for i in range(2,len(link_list)):
                     try:
                         yt = YouTube(f'{self.base_url}{link_list[i]}')
                         print(yt.title)
                         try:
                             streams = yt.streams.filter(file_extension='mp4')
                             print(streams)
-                            stream = yt.streams.get_by_itag(int(input("write the itag")))
+                            stream = yt.streams.get_by_itag(18)#int(input("write the itag")))
                             print("Downloading... ... ... ")
                             stream.download()
                         except:
